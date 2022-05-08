@@ -1,1 +1,3 @@
-# Very own JS Webpack Boilerplate
+# Pickman's Boilerplate
+
+Deploy https://richardpickman.github.io/js-webpack-boilerplate/
