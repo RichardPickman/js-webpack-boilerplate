@@ -1,13 +1,11 @@
-const common = require('./common.webpack.js');
-const paths = require('./paths.webpack.js');
+const common = require('./webpack.common.js');
+const paths = require('./webpack.paths.js');
 
 const { commonModules, commonPlugins, commonResolve } = common;
 
 module.exports = {
     mode: 'development',
-    entry: {
-        main: './src/index.js',
-    },
+    entry: [paths.src + '/index.js'],
     output: {
         path: paths.build,
         filename: '[name].[hash].js',
@@ -27,7 +25,7 @@ module.exports = {
     plugins: [
         ...commonPlugins
     ],
-    resolve: [
+    resolve: {
         ...commonResolve
-    ],
+    }
 }

@@ -7,30 +7,30 @@ module.exports = {
     commonModules: {
         rules: [
             {
-                test: /\.(sass|scss|css)$/i,
+                test: /\.(sass|scss|css)$/,
                 use: [
-                    'style-loader', 
-                    'css-loader',
-                    {
-                        loader: 'postcss-loader',
-                        options: {
-                            postcssOptions: {
-                                plugins: [
-                                  autoprefixer({
-                                    overrideBrowserslist: ['>1%', 'last 4 versions', 'Firefox ESR', 'not ie < 9']
-                                  })
-                                ],
-                                sourceMap: true
-                              }
-                        }
-                    },
-                    {
-                        loader: 'sass-loader',
-                        options: {
-                          sourceMap: true
-                        }
+                  'style-loader',
+                  'css-loader',
+                  {
+                    loader: 'postcss-loader',
+                    options: {
+                      postcssOptions: {
+                        plugins: [
+                          autoprefixer({
+                            overrideBrowserslist: ['>1%', 'last 4 versions', 'Firefox ESR', 'not ie < 9']
+                          })
+                        ],
+                        sourceMap: true
                       }
-                ]
+                    }
+                  },
+                  {
+                    loader: 'sass-loader',
+                    options: {
+                      sourceMap: true
+                    }
+                  }
+                ],
             },
             {
                 test: /\.js$/i,
@@ -51,7 +51,7 @@ module.exports = {
         new HtmlWebpackPlugin({
           template: paths.src + '/template.html',
           title: 'JS Boilerplate',
-          favicon: paths.src + '/svg/favicon.svg',
+          favicon: paths.src + '/assets/favicon.ico',
           filename: 'index.html'
         }),
         new StylelintPlugin(),
