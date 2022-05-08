@@ -1,0 +1,14 @@
+@use '../abstracts/variables' as *;
+
+.container {
+    width: $viewport--large;
+    margin: 0 auto;
+
+    @media (min-width: $viewport--medium) and (max-width: ($viewport--large - 1px)) {
+        width: $viewport--medium;
+    }
+
+    @media (min-width: $viewport--small) and (max-width: ($viewport--medium - 1px)) {
+        width: 100%;
+    }
+}

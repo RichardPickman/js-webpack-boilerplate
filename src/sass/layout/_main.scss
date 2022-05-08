@@ -1,0 +1,23 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+body {
+    background-color: $primary-color;
+}
+
+.main {
+    @include flex();
+    flex-direction: column;
+    background-color: inherit;
+
+    &__avatar {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.list {
+    color: $secondary-color;
+    text-align: center;
+    font-size: 2em;
+}
